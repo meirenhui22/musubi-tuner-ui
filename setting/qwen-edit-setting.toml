@@ -1,0 +1,19 @@
+#edit 配置文件
+
+[general]
+resolution = [768, 1024]  # 控制图基准尺寸
+batch_size = 1
+enable_bucket = true  # 自动适配两种尺寸
+bucket_no_upscale = false
+caption_extension = ".txt"
+
+
+[[datasets]]
+image_directory = "/workspace/train/edit-dataset/target"  # 目标图+txt（768x1152）
+control_directory = "/workspace/train/edit-dataset/control"  # 控制图（768x1024）
+cache_directory = "/workspace/train/edit-dataset/cache"
+num_repeats = 1
+
+# Qwen-Image-Edit 专用配置
+qwen_image_edit_control_resolution = [768, 1024]  # 与控制图尺寸一致
+qwen_image_edit_no_resize_control = false  # 允许自动适配尺寸

@@ -1,0 +1,15 @@
+# resolution, caption_extension, batch_size, num_repeats, enable_bucket, bucket_no_upscale should be set in either general or datasets
+# otherwise, the default values will be used for each item
+
+# general configurations
+[general]
+resolution = [512, 768]
+caption_extension = ".txt"
+batch_size = 1
+enable_bucket = true
+bucket_no_upscale = false
+
+[[datasets]]
+image_directory = "/workspace/train/dataset/target"
+cache_directory = "/workspace/train/dataset/cache"
+num_repeats = 20 
